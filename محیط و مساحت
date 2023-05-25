@@ -1,0 +1,239 @@
+using System;
+namespace project;
+public class zozanaghe {
+    double a;
+    double b;
+    double c;
+    double d;
+    double h;
+    public double A
+    {
+        get { return a; }
+        set
+        {
+            if (value > 0)
+            { a = value; }
+        }
+    }
+    public double B
+    {
+        get { return b; }
+            set
+        {
+            if (value > 0)
+            {
+                b = value;
+            }
+        }
+    }
+    public double C
+    {
+        get { return c; }
+        set { if (value > 0)
+            {
+                c = value;
+            } 
+        }
+    }
+    public double D
+    {
+        get { return d; }
+        set
+        {
+            if (value > 0)
+            {
+                d = value;
+            }
+        }
+    }
+    public double H
+    {
+        get { return h; }
+        set
+        {
+            if (value > 0)
+            {
+                h = value;
+            } 
+        }
+    }
+    public zozanaghe() { }
+    public zozanaghe (double A,double B , double C, double D,double H )
+    {
+        a = A;
+        b = B;
+        c = C;
+        d = D;
+        h= H;
+
+    }
+    public double ZS()
+    {
+        return (a + b) * h / 2;
+    }
+    public double ZA()
+    {
+        return a + b + c + d;
+    }
+    
+}
+ public class nzel
+{
+    double n;
+    double s;
+    double hs;
+    public double N
+    {
+        get { return n; }
+        set
+        {
+            if (value > 0)
+            {
+                n = value;
+            }
+        }
+    }
+    public double S
+    {
+        get { return s; }
+        set
+        {
+            if (value > 0)
+            {
+                s = value;
+            }
+        }
+    }
+    public double HS
+    {
+        get { return hs; }
+        set
+        {
+            if (value > 0)
+            {
+                hs = value;
+            }
+        }
+    }
+    public nzel() { }
+    public nzel(double N , double S , double HS)
+    {
+        n = N;
+        s = S;
+        hs = HS;
+    }
+    public double NP()
+    {
+        return n * s;
+    }
+    public double NA()
+    {
+        return n * s * hs / 2;
+    }
+} 
+public class beuzii
+{
+    double rk;
+    double rb;
+    public double RK
+    {
+        get { return rk; }
+        set
+        {
+            if (value > 0)
+            {
+                rk = value;
+            }
+        }
+    }
+    public double RB
+    {
+        get { return rb; }
+        set
+        {
+            if (value > 0)
+            {
+                rb = value;
+            }
+        }
+    }
+    public beuzii() { }
+    public beuzii(double RK, double RB)
+    {
+        rk = RK;
+        rb = RB;
+    }
+    public double BP()
+    {
+        return Math.PI * (rk + rb);
+    }
+    public double BA()
+    {
+        return Math.PI * rk * rb;
+    }
+}
+class test
+{
+    public static void Main()
+    {
+        int num;
+        Console.WriteLine("gozine mored nazar ra vared konid");
+        Console.WriteLine("mohasebe A & P zozanaghe = 1");
+        Console.WriteLine("mohasebe A & P chand zeli = 2");
+        Console.WriteLine("mohasebe A & P beuzi = 3");
+        num = Convert.ToInt32(Console.ReadLine());
+        
+        switch (num)
+        {
+            case 1:
+                Console.WriteLine("enter ghaede bozorg");
+                double a = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter ghaede kochak");
+                double b = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter zel digar");
+                double c = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter zel digar");
+                double d = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter ertefa");
+                double h = Convert.ToDouble(Console.ReadLine());
+                zozanaghe the = new zozanaghe(a,b,c,d,h);
+                double thiss = the.ZS();
+                Console.WriteLine(thiss);
+                double thatt = the.ZA();
+                Console.WriteLine(thatt);
+                break;
+            case 2:
+                Console.WriteLine("enter tedad zel");
+                double n = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter tol zel");
+                double s = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter ertefa");
+                double hs = Convert.ToDouble(Console.ReadLine());
+                nzel nzeli = new nzel(n,s,hs); 
+                double zel = nzeli.NP();
+                Console.WriteLine(zel);
+                double azel = nzeli.NA();
+                Console.WriteLine(azel);
+                break;
+            case 3:
+                Console.WriteLine("vared konid shoa kochak ra");
+                double rk = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("vared konid shoa bozorg ra");
+                double rb = Convert.ToDouble(Console.ReadLine());
+                beuzii beuzi = new beuzii(rk,rb);
+                double shoa = beuzi.BP();
+                Console.WriteLine(shoa);
+                double beu = beuzi.BA();
+                Console.WriteLine(beu);
+                break;
+                default:
+                Console.WriteLine("adad mored nazar vojod nadarad");
+                break;
+
+        }
+        
+
+
+
+    }
+}
